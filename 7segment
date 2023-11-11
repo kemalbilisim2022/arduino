@@ -1,15 +1,50 @@
-int s = 1000;
-int sayi=5;
+int s = 100;
+int sayi=0;
+int tutulan = 0;
+
 void setup() {
   for(int i=2;i<9;i++){
     pinMode(i,OUTPUT);
   }
   Serial.begin(9600);
+  pinMode(10,INPUT);
+  pinMode(11,OUTPUT);
+  pinMode(12,OUTPUT);
 
 }
 
 void loop() {
-    switch(sayi%10){
+  int buton = digitalRead(10);   
+    sayi++;
+    tutulan = sayi%10;
+    sec(tutulan);
+    delay(s);
+    if(buton == 1){
+      Serial.println(tutulan);
+      if(tutulan == 5){
+        digitalWrite(11,HIGH);
+        digitalWrite(12,HIGH);
+        delay(50);
+        digitalWrite(11,LOW);
+        delay(1000);
+        digitalWrite(12,LOW);
+      }else{
+        for(int i = 0;i<4;i++){
+          digitalWrite(11,HIGH);
+          delay(100);
+          digitalWrite(11,HIGH);
+          delay(100);
+        }
+         digitalWrite(11,LOW);
+      }
+      
+    }
+    
+
+}
+
+void sec(int gelen){
+  switch(gelen){
       case 0:
       sifir();
       break;
@@ -41,9 +76,6 @@ void loop() {
       dokuz();
       break;
     }
-    delay(s);
-    sayi++;
-
 }
 
 void bir(){
