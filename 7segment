@@ -1,0 +1,147 @@
+int s = 1000;
+int sayi=5;
+void setup() {
+  for(int i=2;i<9;i++){
+    pinMode(i,OUTPUT);
+  }
+  Serial.begin(9600);
+
+}
+
+void loop() {
+    switch(sayi%10){
+      case 0:
+      sifir();
+      break;
+      case 1:
+      bir();
+      break;
+      case 2:
+      iki();
+      break;
+      case 3:
+      uc();
+      break;
+      case 4:
+      dort();
+      break;
+      case 5:
+      bes();
+      break;
+      case 6:
+      alti();
+      break;
+      case 7:
+      yedi();
+      break;
+      case 8:
+      sekiz();
+      break;
+      case 9:
+      dokuz();
+      break;
+    }
+    delay(s);
+    sayi++;
+
+}
+
+void bir(){
+  digitalWrite(2,0);
+  digitalWrite(3,0); 
+  digitalWrite(4,0); 
+  digitalWrite(5,1); 
+  digitalWrite(6,0); 
+  digitalWrite(7,0); 
+  digitalWrite(8,1);
+}
+
+void iki(){
+  digitalWrite(2,1);
+  digitalWrite(3,0); 
+  digitalWrite(4,1); 
+  digitalWrite(5,1); 
+  digitalWrite(6,1); 
+  digitalWrite(7,1); 
+  digitalWrite(8,0);
+}
+
+void uc(){
+  digitalWrite(2,1);
+  digitalWrite(3,0); 
+  digitalWrite(4,1); 
+  digitalWrite(5,1); 
+  digitalWrite(6,0); 
+  digitalWrite(7,1); 
+  digitalWrite(8,1);
+}
+
+void dort(){
+  digitalWrite(2,1);
+  digitalWrite(3,1); 
+  digitalWrite(4,0); 
+  digitalWrite(5,1); 
+  digitalWrite(6,0); 
+  digitalWrite(7,0); 
+  digitalWrite(8,1);
+}
+
+void bes(){
+  digitalWrite(2,1);
+  digitalWrite(3,1); 
+  digitalWrite(4,1); 
+  digitalWrite(5,0); 
+  digitalWrite(6,0); 
+  digitalWrite(7,1); 
+  digitalWrite(8,1);
+}
+
+void alti(){
+  digitalWrite(2,1);
+  digitalWrite(3,1); 
+  digitalWrite(4,1); 
+  digitalWrite(5,0); 
+  digitalWrite(6,1); 
+  digitalWrite(7,1); 
+  digitalWrite(8,1);
+}
+
+void yedi(){
+  digitalWrite(2,0);
+  digitalWrite(3,0); 
+  digitalWrite(4,1); 
+  digitalWrite(5,1); 
+  digitalWrite(6,0); 
+  digitalWrite(7,0); 
+  digitalWrite(8,1);
+}
+
+void sekiz(){
+  digitalWrite(2,1);
+  digitalWrite(3,1); 
+  digitalWrite(4,1); 
+  digitalWrite(5,1); 
+  digitalWrite(6,1); 
+  digitalWrite(7,1); 
+  digitalWrite(8,1);
+}
+
+void dokuz(){
+  digitalWrite(2,1);
+  digitalWrite(3,1); 
+  digitalWrite(4,1); 
+  digitalWrite(5,1); 
+  digitalWrite(6,0); 
+  digitalWrite(7,1); 
+  digitalWrite(8,1);
+}
+
+void sifir(){
+  digitalWrite(2,0);
+  digitalWrite(3,1); 
+  digitalWrite(4,1); 
+  digitalWrite(5,1); 
+  digitalWrite(6,1); 
+  digitalWrite(7,1); 
+  digitalWrite(8,1);
+}
